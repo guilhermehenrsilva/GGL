@@ -12,24 +12,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.3" />
-
-    <ImageView
-        android:id="@+id/imageViewTopo"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineTopo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/gas_station_2" />
+        app:layout_constraintGuide_percent="0.18" />
 
     <TextView
         android:id="@+id/textViewTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
+        android:layout_marginEnd="120dp"
         android:background="@color/blue_700"
         android:padding="8dp"
         android:text="Alcool ou Gasolina"
@@ -37,7 +26,8 @@
         android:textSize="18dp"
         app:layout_constraintBottom_toTopOf="@+id/guidelineTopo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guidelineTopo" />
+        app:layout_constraintTop_toTopOf="@+id/guidelineTopo"
+        app:layout_constraintVertical_bias="1.0" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayoutEtanol"
@@ -91,28 +81,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayoutGas" />
 
-    <ImageView
-        android:id="@+id/imageViewFuel"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonCalcular"
-        app:srcCompat="@drawable/gas"/>
-
-    <ImageView
-        android:id="@+id/imageViewShare"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd="32dp"
-        android:tint="#575454"
-        app:layout_constraintBottom_toBottomOf="@+id/textViewMessage"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textViewMessage"
-        app:layout_constraintVertical_bias="0.551"
-        app:srcCompat="@drawable/share" />
-
     <TextView
         android:id="@+id/textViewMessage"
         android:layout_width="0dp"
@@ -122,7 +90,31 @@
         android:text="Melhor opção"
         app:layout_constraintBottom_toBottomOf="@+id/imageViewFuel"
         app:layout_constraintEnd_toStartOf="@+id/imageViewShare"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/imageViewFuel"
-        app:layout_constraintTop_toTopOf="@+id/imageViewFuel" />
+        app:layout_constraintTop_toTopOf="@+id/imageViewFuel"
+        app:layout_constraintVertical_bias="0.493" />
+
+    <ImageView
+        android:id="@+id/imageViewShare"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="36dp"
+        android:tint="#575454"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewMessage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewMessage"
+        app:layout_constraintVertical_bias="0.551"
+        app:srcCompat="@drawable/share" />
+
+    <ImageView
+        android:id="@+id/imageViewFuel"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="84dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonCalcular"
+        app:srcCompat="@drawable/gas" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
