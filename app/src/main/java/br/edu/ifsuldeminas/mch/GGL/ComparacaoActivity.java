@@ -15,26 +15,29 @@ import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 
-import br.edu.ifsuldeminas.mch.GGL.R;
-
-public class MainActivity extends AppCompatActivity {
+public class ComparacaoActivity extends AppCompatActivity {
 
     private TextInputEditText textInputEditTextEtanol;
     private TextInputEditText textInputEditTextGas;
+
+    private TextInputEditText textInputEditTextKmDestino;
+    private TextInputEditText textInputEditTextKmPorLitro;
     private Button btnCalcular;
     private ImageView imageViewResult;
     private ImageView imageViewShare;
     private TextView textViewResult;
     private String tip;
-    private Double etanolPrice, gasPrice;
+    private Double etanolPrice, gasPrice , km, kmLitro ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_comparacao);
 
         textInputEditTextEtanol = findViewById(R.id.textInputEditTextEtanol);
         textInputEditTextGas = findViewById(R.id.textInputEditTextGas);
+        textInputEditTextKmDestino = findViewById(R.id.textInputLayoutKmDestino);
+        textInputEditTextKmPorLitro = findViewById((R.id.textInputEditTextKmPorLitro);
         btnCalcular = findViewById(R.id.buttonCalcular);
         imageViewResult = findViewById(R.id.imageViewFuel);
         imageViewShare = findViewById(R.id.imageViewShare);
