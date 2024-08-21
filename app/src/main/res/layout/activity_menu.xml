@@ -3,38 +3,59 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#676161">
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="391dp"
-        android:layout_height="409dp"
-        app:srcCompat="@drawable/ggl_logo_transparent_removebg_preview"
-        tools:layout_editor_absoluteX="10dp"
-        tools:layout_editor_absoluteY="74dp" />
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:layout_marginBottom="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.060000002"
+        app:srcCompat="@drawable/ggl_logo_transparent_removebg_preview" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6155951" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="117dp"
-        android:layout_height="58dp"
-        android:text="Button"
-        tools:layout_editor_absoluteX="10dp"
-        tools:layout_editor_absoluteY="496dp" />
+        android:id="@+id/buttonCadastro"
+        android:layout_width="240dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="40dp"
+        android:text="Cadastro de Abastecimento "
+        app:cornerRadius="15px"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="117dp"
-        android:layout_height="58dp"
-        android:text="Button"
-        tools:layout_editor_absoluteX="147dp"
-        tools:layout_editor_absoluteY="496dp" />
+        android:id="@+id/buttonControle"
+        android:layout_width="240dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="20dp"
+        android:text="Controle de Abastecimento"
+        app:cornerRadius="15px"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonCadastro" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="117dp"
-        android:layout_height="58dp"
-        android:text="Button"
-        tools:layout_editor_absoluteX="278dp"
-        tools:layout_editor_absoluteY="496dp" />
+        android:id="@+id/buttonComparacao"
+        android:layout_width="240dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="20dp"
+        android:text="Comparação de Preços"
+        app:cornerRadius="15px"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonControle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
