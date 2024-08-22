@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,14 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.core.app.ActivityCompat;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
+
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.os.Build;
 
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -32,6 +41,7 @@ public class ComparacaoActivity extends AppCompatActivity {
     private String tip;
     private Double gasPrice;
     private Double etanolPrice;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,16 +90,19 @@ public class ComparacaoActivity extends AppCompatActivity {
 
             if (etanolPrice / gasPrice < 0.7) {
                 imageViewResult.setImageResource(R.drawable.ethanol);
-                tip = "Melhor usar etanol. Você precisará de aproximadamente " + litrosNecessariosStr + " litros para a viagem.";
+                tip = "Melhor usar etanol. Você precisará de " + litrosNecessariosStr + " L para a viagem.";
             } else {
                 imageViewResult.setImageResource(R.drawable.gas);
-                tip = "Melhor usar gasolina. Você precisará de aproximadamente " + litrosNecessariosStr + " litros para a viagem.";
+                tip = "Melhor usar gasolina. Você precisará de " + litrosNecessariosStr + " L para a viagem.";
             }
 
             textViewResult.setText(tip);
             imageViewResult.setVisibility(ImageView.VISIBLE);
             textViewResult.setVisibility(TextView.VISIBLE);
             imageViewShare.setVisibility(ImageView.VISIBLE);
+
+            // Criar notificação push
+            createNotification(tip);
         });
 
         imageViewShare.setOnClickListener(view -> {
@@ -116,13 +129,13 @@ public class ComparacaoActivity extends AppCompatActivity {
                     return;
                 }
 
-                double gasPriceValue = gasPrice;  // Se gasPrice for Double, remova o Double.parseDouble
-                double etanolPriceValue = etanolPrice;  // Se etanolPrice for Double, remova o Double.parseDouble
+                double gasPriceValue = gasPrice;
+                double etanolPriceValue = etanolPrice;
 
                 // Calcula a relação de preços
                 double ratio = (etanolPriceValue / gasPriceValue) * 100;
                 String message = String.format(
-                        "Preço do posto '%s'. Gasolina: %.2f, Etanol: %.2f. %s. ",
+                        "Preço do posto '%s'. Gasolina: %.2f, Etanol: %.2f. %s.",
                         posto, gasPriceValue, etanolPriceValue, tip, ratio
                 );
 
@@ -142,8 +155,45 @@ public class ComparacaoActivity extends AppCompatActivity {
             });
             builder.create().show();
         });
-
     }
+
+    private void createNotification(String message) {
+        String channelId = "fuel_comparison_channel";
+        String channelName = "Fuel Comparison Notifications";
+
+        // Criação do canal de notificação para Android O e superior
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel(
+                    channelId, channelName, NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            if (manager != null) {
+                manager.createNotificationChannel(channel);
+            }
+        }
+
+        // Configuração da notificação
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, channelId)
+                .setSmallIcon(R.drawable.ic_notification)
+                .setContentTitle("Resultado da Comparação de Combustível")
+                .setContentText(message)
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                .setAutoCancel(true);
+
+        // Exibir a notificação
+        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
+        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
+        notificationManager.notify(1, builder.build());
+    }
+
     @Override
     protected void onStart() {
         super.onStart();

@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#676161"
+    android:outlineSpotShadowColor="#DBD0CD"
     tools:context=".ComparacaoActivity"
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="0dp">
@@ -14,8 +16,19 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
+        android:textColorHint="#DBD0CD"
+        app:boxStrokeColor="@color/white"
+        app:counterTextColor="@color/white"
+        app:endIconTint="@color/white"
+        app:helperTextTextColor="@color/white"
+        app:hintTextColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:passwordToggleTint="@color/white"
+        app:placeholderTextColor="@color/white"
+        app:prefixTextColor="@color/white"
+        app:startIconTint="@color/white"
+        app:suffixTextColor="@color/white"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteY="83dp">
 
@@ -24,7 +37,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Valor do Etanol, ex: 2.99"
-            android:inputType="numberDecimal" />
+            android:inputType="numberDecimal"
+            android:textColor="#DBD0CD"
+            android:textColorHighlight="@color/white"
+            android:textColorHint="@color/white"
+            android:textColorLink="@color/white" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -34,6 +51,8 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
+        android:textColorHint="#DBD0CD"
+        app:counterTextColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayoutEtanol">
@@ -43,7 +62,8 @@
             android:layout_width="match_parent"
             android:layout_height="53dp"
             android:hint="Valor da Gasolina, ex: 5.99"
-            android:inputType="numberDecimal" />
+            android:inputType="numberDecimal"
+            android:textColor="#DBD0CD" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -54,6 +74,8 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="104dp"
         android:layout_marginEnd="24dp"
+        android:textColorHint="#DBD0CD"
+        app:counterTextColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -77,6 +99,8 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="200dp"
         android:layout_marginEnd="24dp"
+        android:textColorHint="#DBD0CD"
+        app:counterTextColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -101,7 +125,10 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="220dp"
         android:layout_marginEnd="24dp"
+        android:backgroundTint="#DBD0CD"
+        android:foregroundTint="#DBD0CD"
         android:text="Calcular"
+        android:textColor="#494644"
         android:textSize="20sp"
         app:cornerRadius="5dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -124,6 +151,7 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginEnd="44dp"
+        android:outlineAmbientShadowColor="#DBD0CD"
         app:layout_constraintBottom_toBottomOf="@+id/textViewMessage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textViewMessage"
@@ -138,6 +166,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:text="Melhor opção"
+        android:textColor="#DBD0CD"
         app:layout_constraintBottom_toBottomOf="@+id/imageViewFuel"
         app:layout_constraintEnd_toStartOf="@+id/imageViewShare"
         app:layout_constraintHorizontal_bias="0.0"
