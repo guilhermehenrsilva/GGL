@@ -26,4 +26,10 @@ public class MenuActivity extends AppCompatActivity {
         Intent intent = new Intent(this, FuelHistoryActivity.class);
         startActivity(intent);
     }
+
+    public void openFuelComparacao(View view) {
+        Intent intent = new Intent(this, ComparacaoActivity.class);
+        startActivity(intent);
+    }
+
 }

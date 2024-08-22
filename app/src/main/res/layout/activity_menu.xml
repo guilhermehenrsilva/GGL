@@ -33,14 +33,14 @@
         android:layout_height="53dp"
         android:layout_marginTop="20dp"
         android:backgroundTint="#DBD0CD"
+        android:onClick="openFuelHistory"
         android:text="Controle de Abastecimento"
         android:textColor="#494644"
         android:textSize="14sp"
         app:cornerRadius="15px"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonCadastro"
-        android:onClick="openFuelHistory"/>
+        app:layout_constraintTop_toBottomOf="@+id/buttonCadastro" />
 
     <Button
         android:id="@+id/buttonComparacao"
@@ -48,6 +48,7 @@
         android:layout_height="53dp"
         android:layout_marginTop="20dp"
         android:backgroundTint="#DBD0CD"
+        android:onClick="openFuelComparacao"
         android:text="Comparação de Preços"
         android:textColor="#494644"
         android:textSize="14sp"
@@ -76,9 +77,11 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
+            android:background="#000000"
             android:elevation="4dp"
-            android:titleTextColor="@android:color/white" />
+            android:textAlignment="center"
+            android:titleTextColor="@color/black"
+            app:subtitleTextAppearance="@style/TextAppearance.AppCompat.Medium" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
