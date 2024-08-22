@@ -15,6 +15,8 @@
         <activity
             android:name=".FuelHistoryActivity"
             android:exported="false" />
+        <activity android:name=".AlertDialogGasStationViewActivity"
+            android:exported="false" />
         <activity android:name=".MenuActivity"
             android:screenOrientation="portrait"
             android:exported="true">
