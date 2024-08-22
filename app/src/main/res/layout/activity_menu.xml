@@ -14,24 +14,10 @@
         app:layout_constraintGuide_percent="0.6155951" />
 
     <Button
-        android:id="@+id/buttonCadastro"
-        android:layout_width="240dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="40dp"
-        android:backgroundTint="#DBD0CD"
-        android:text="Cadastro de Abastecimento "
-        android:textColor="#494644"
-        android:textSize="14sp"
-        app:cornerRadius="15px"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline" />
-
-    <Button
         android:id="@+id/buttonControle"
         android:layout_width="240dp"
         android:layout_height="53dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="70dp"
         android:backgroundTint="#DBD0CD"
         android:onClick="openFuelHistory"
         android:text="Controle de Abastecimento"
@@ -40,7 +26,7 @@
         app:cornerRadius="15px"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonCadastro" />
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
 
     <Button
         android:id="@+id/buttonComparacao"
