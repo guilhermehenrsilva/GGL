@@ -123,6 +123,4 @@ public class MainActivity extends AppCompatActivity {
         textViewResult.setVisibility(TextView.INVISIBLE);
         imageViewShare.setVisibility(ImageView.INVISIBLE);
     }
-
-
 }
