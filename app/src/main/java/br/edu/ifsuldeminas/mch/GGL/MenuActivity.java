@@ -12,7 +12,7 @@ public class MenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-        Button buttonComparar = findViewById(R.id.buttonComparar);
+        Button buttonComparar = findViewById(R.id.buttonComparacao);
 
 
         buttonComparar.setOnClickListener(new View.OnClickListener() {
