@@ -6,18 +6,6 @@
     android:layout_height="match_parent"
     android:background="#676161">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="400dp"
-        android:layout_height="400dp"
-        android:layout_marginBottom="70dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.060000002"
-        app:srcCompat="@drawable/ggl_logo_transparent_removebg_preview" />
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
         android:layout_width="wrap_content"
@@ -30,7 +18,10 @@
         android:layout_width="240dp"
         android:layout_height="53dp"
         android:layout_marginTop="40dp"
+        android:backgroundTint="#DBD0CD"
         android:text="Cadastro de Abastecimento "
+        android:textColor="#494644"
+        android:textSize="14sp"
         app:cornerRadius="15px"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,21 +32,54 @@
         android:layout_width="240dp"
         android:layout_height="53dp"
         android:layout_marginTop="20dp"
+        android:backgroundTint="#DBD0CD"
         android:text="Controle de Abastecimento"
+        android:textColor="#494644"
+        android:textSize="14sp"
         app:cornerRadius="15px"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonCadastro" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonCadastro"
+        android:onClick="openFuelHistory"/>
 
     <Button
         android:id="@+id/buttonComparacao"
         android:layout_width="240dp"
         android:layout_height="53dp"
         android:layout_marginTop="20dp"
+        android:backgroundTint="#DBD0CD"
         android:text="Comparação de Preços"
+        android:textColor="#494644"
+        android:textSize="14sp"
         app:cornerRadius="15px"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonControle" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="311dp"
+        android:layout_height="289dp"
+        android:layout_marginTop="84dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        tools:ignore="MissingConstraints">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:elevation="4dp"
+            android:titleTextColor="@android:color/white" />
+
+    </com.google.android.material.appbar.AppBarLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

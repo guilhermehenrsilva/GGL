@@ -13,7 +13,7 @@
         android:theme="@style/Theme.Fuel"
         tools:targetApi="31">
         <activity
-            android:name=".AlertDialogGasStationViewActivity"
+            android:name=".FuelHistoryActivity"
             android:exported="false" />
         <activity
             android:name=".MenuActivity"
