@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">GGL - Controle de Abastecimento</string>
+    <string name="title_activity_fuel_register_form">Cadastro de Abastecimento</string>
+    <string name="fuel_register_quantity">Qtd. combustível (em litros)</string>
+    <string name="fuel_register_price">Preço do combustível (ex.: 5,00)</string>
+    <string name="save_fuel_register">Salvar registro de abastecimento</string>
+    <string name="fab_description">Adicionar abastecimento</string>
 </resources>
