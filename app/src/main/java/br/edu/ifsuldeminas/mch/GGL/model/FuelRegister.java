@@ -43,6 +43,6 @@ public class FuelRegister implements Serializable {
     @Override
     public String toString() {
         return "Quantidade de combustível: " + this.getFuelQty().toString() +
-                "Preço: " + this.getFuelPrice().toString();
+                ", Preço: " + this.getFuelPrice().toString();
     }
 }

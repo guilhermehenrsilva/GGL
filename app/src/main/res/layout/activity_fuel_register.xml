@@ -23,7 +23,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginTop="@dimen/margin_to_action_bar"
         android:layout_marginRight="@dimen/activity_horizontal_margin">
@@ -34,17 +34,21 @@
             android:layout_height="wrap_content"
             android:hint="@string/fuel_register_quantity"
             android:minHeight="@dimen/edit_texts_height" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/margin_to_action_bar"
+        android:layout_marginRight="@dimen/activity_horizontal_margin">
+
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/fuel_price"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/fuel_register_price" />
-        </com.google.android.material.textfield.TextInputLayout>
+            android:layout_height="wrap_content"
+            android:hint="@string/fuel_register_price"
+            android:minHeight="@dimen/edit_texts_height" />
     </com.google.android.material.textfield.TextInputLayout>
 
 </LinearLayout>
