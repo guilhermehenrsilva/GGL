@@ -25,6 +25,7 @@ public class FuelRegisterActivity extends AppCompatActivity {
     private EditText fuelQty;
     private EditText fuelPrice;
     private FuelRegister fuelRegister;
+    private int saveFuelRegisterId;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -34,6 +35,8 @@ public class FuelRegisterActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        saveFuelRegisterId = R.id.save_fuel_register;
 
         Intent chooserIntent = getIntent();
         fuelRegister = (FuelRegister) chooserIntent.getSerializableExtra("fuel_register");
@@ -53,54 +56,48 @@ public class FuelRegisterActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
-//    @Override
-//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-//
-//        switch (item.getItemId()) {
-//
-//            case R.id.save_fuel_register: {
-//                fuelQty = findViewById(R.id.fuel_qtd);
-//                Editable editableQty = fuelQty.getText();
-//                String descQty = editableQty != null ? editableQty.toString() : "";
-//
-//                fuelPrice = findViewById(R.id.fuel_price);
-//                Editable editablePrice = fuelPrice.getText();
-//                String descPrice = editablePrice != null ? editablePrice.toString() : "";
-//
-//                if(descQty.equals("")) {
-//                    Toast toast = Toast.makeText(this, "Quantidade de combustível não pode ser vazia!", Toast.LENGTH_LONG);
-//                    toast.show();
-//                    return false;
-//                }
-//
-//                if(descPrice.equals("")) {
-//                    Toast toast = Toast.makeText(this, "Preço de combustível não pode ser vazio!", Toast.LENGTH_LONG);
-//                    toast.show();
-//                    return false;
-//                }
-//
-//                FuelRegisterDAO dao = new FuelRegisterDAO(this);
-//
-//                if(this.fuelRegister == null) {
-//                    fuelRegister = new FuelRegister();
-//                    fuelRegister.setFuelQty(Double.parseDouble(descQty));
-//                    fuelRegister.setFuelPrice(Double.parseDouble(descPrice));
-//                    dao.save(fuelRegister);
-//                    Toast toast = Toast.makeText(this, "Registro salvo com sucesso!", Toast.LENGTH_LONG);
-//                    toast.show();
-//                } else {
-//                    fuelRegister.setFuelQty(Double.parseDouble(descQty));
-//                    fuelRegister.setFuelPrice(Double.parseDouble(descPrice));
-//                    dao.update(fuelRegister);
-//                    Toast toast = Toast.makeText(this, "Registro atualizado com sucesso!", Toast.LENGTH_LONG);
-//                    toast.show();
-//                }
-//
-//                finish();
-//                break;
-//            }
-//        };
-//
-//        return super.onOptionsItemSelected(item);
-//    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == saveFuelRegisterId) {
+            fuelQty = findViewById(R.id.fuel_qtd);
+            Editable editableQty = fuelQty.getText();
+            String descQty = editableQty != null ? editableQty.toString() : "";
+
+            fuelPrice = findViewById(R.id.fuel_price);
+            Editable editablePrice = fuelPrice.getText();
+            String descPrice = editablePrice != null ? editablePrice.toString() : "";
+
+            if(descQty.equals("")) {
+                Toast toast = Toast.makeText(this, "Quantidade de combustível não pode ser vazia!", Toast.LENGTH_LONG);
+                toast.show();
+                return false;
+            }
+
+            if(descPrice.equals("")) {
+                Toast toast = Toast.makeText(this, "Preço de combustível não pode ser vazio!", Toast.LENGTH_LONG);
+                toast.show();
+                return false;
+            }
+
+            FuelRegisterDAO dao = new FuelRegisterDAO(this);
+
+            if(this.fuelRegister == null) {
+                fuelRegister = new FuelRegister();
+                fuelRegister.setFuelQty(Double.parseDouble(descQty));
+                fuelRegister.setFuelPrice(Double.parseDouble(descPrice));
+                dao.save(fuelRegister);
+                Toast toast = Toast.makeText(this, "Registro salvo com sucesso!", Toast.LENGTH_LONG);
+                toast.show();
+            } else {
+                fuelRegister.setFuelQty(Double.parseDouble(descQty));
+                fuelRegister.setFuelPrice(Double.parseDouble(descPrice));
+                dao.update(fuelRegister);
+                Toast toast = Toast.makeText(this, "Registro atualizado com sucesso!", Toast.LENGTH_LONG);
+                toast.show();
+            }
+            finish();
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 }
