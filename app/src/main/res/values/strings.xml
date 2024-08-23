@@ -5,4 +5,12 @@
     <string name="fuel_register_price">Valor pago (ex.: 5,00)</string>
     <string name="save_fuel_register">Salvar registro de abastecimento</string>
     <string name="fab_description">Adicionar abastecimento</string>
+    <string name="ethanol_price">Valor do Etanol, ex: 2.99</string>
+    <string name="gas_price">Valor da Gasolina, ex: 5.99</string>
+    <string name="travel_distance">Informe a distância em KM de sua viagem</string>
+    <string name="text_efficiency">Informe a quantos km por litros seu carro faz</string>
+    <string name="text_calculate">Calcular</string>
+    <string name="text_best_option">Melhor opção</string>
+    <string name="button_fuel_register">Controle de Abastecimento</string>
+    <string name="button_price_compare">Comparação de Preços</string>
 </resources>

@@ -36,7 +36,7 @@
             android:id="@+id/textInputEditTextEtanol"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Valor do Etanol, ex: 2.99"
+            android:hint="@string/ethanol_price"
             android:inputType="numberDecimal"
             android:textColor="#DBD0CD"
             android:textColorHighlight="@color/white"
@@ -61,7 +61,7 @@
             android:id="@+id/textInputEditTextGas"
             android:layout_width="match_parent"
             android:layout_height="53dp"
-            android:hint="Valor da Gasolina, ex: 5.99"
+            android:hint="@string/gas_price"
             android:inputType="numberDecimal"
             android:textColor="#DBD0CD" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -85,7 +85,7 @@
             android:id="@+id/textInputEditTextKmDestino"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Informe a distância em KM de sua viagem"
+            android:hint="@string/travel_distance"
             android:inputType="numberDecimal"
             tools:layout_editor_absoluteX="24dp"
             tools:layout_editor_absoluteY="238dp" />
@@ -110,7 +110,7 @@
             android:id="@+id/textInputEditTextKmPorLitro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Informe a quantos km por litros seu carro faz"
+            android:hint="@string/text_efficiency"
             android:inputType="numberDecimal"
             tools:layout_editor_absoluteX="24dp"
             tools:layout_editor_absoluteY="238dp" />
@@ -127,7 +127,7 @@
         android:layout_marginEnd="24dp"
         android:backgroundTint="#DBD0CD"
         android:foregroundTint="#DBD0CD"
-        android:text="Calcular"
+        android:text="@string/text_calculate"
         android:textColor="#494644"
         android:textSize="20sp"
         app:cornerRadius="5dp"
@@ -165,7 +165,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:text="Melhor opção"
+        android:text="@string/text_best_option"
         android:textColor="#DBD0CD"
         app:layout_constraintBottom_toBottomOf="@+id/imageViewFuel"
         app:layout_constraintEnd_toStartOf="@+id/imageViewShare"
