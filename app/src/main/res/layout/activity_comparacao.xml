@@ -87,6 +87,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/travel_distance"
             android:inputType="numberDecimal"
+            android:textColor="#DBD0CD"
             tools:layout_editor_absoluteX="24dp"
             tools:layout_editor_absoluteY="238dp" />
 
@@ -112,6 +113,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/text_efficiency"
             android:inputType="numberDecimal"
+            android:textColor="#DBD0CD"
             tools:layout_editor_absoluteX="24dp"
             tools:layout_editor_absoluteY="238dp" />
 
