@@ -48,6 +48,8 @@ dependencies {
     }
 }
 dependencies {
-     implementation 'com.google.firebase:firebase-messaging:24.0.1'
+
+    implementation 'com.google.firebase:firebase-auth:23.0.0'
+    implementation 'com.google.firebase:firebase-messaging:24.0.1'
 
 }
