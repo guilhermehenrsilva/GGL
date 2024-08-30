@@ -58,4 +58,8 @@ public class MenuActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void openFuelPrices(View view) {
+        Intent intent = new Intent(this, GasPriceListActivity.class);
+        startActivity(intent);
+    }
 }
