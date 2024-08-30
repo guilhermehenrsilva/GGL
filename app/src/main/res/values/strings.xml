@@ -13,4 +13,14 @@
     <string name="text_best_option">Melhor opção</string>
     <string name="button_fuel_register">Controle de Abastecimento</string>
     <string name="button_price_compare">Comparação de Preços</string>
+    <string name="loginTitle">Login</string>
+    <string name="emailHint">E-mail</string>
+    <string name="passwordHint">Senha</string>
+    <string name="btnLogin">LOGIN</string>
+    <string name="registerTitle">Registrar</string>
+    <string name="btnRegister">REGISTRAR</string>
+    <string name="returnLogin">Voltar ao Login</string>
+    <string name="returnRegister">Clique para Registrar</string>
+    <string name="button_logout">LOGOUT</string>
+    <string name="button_gas_prices">Preços de Gasolina</string>
 </resources>
